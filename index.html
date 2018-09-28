@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Animated Strokes | Demo 1 | Codrops</title>
+		<meta name="description" content="A strokes animation of a bike illustration powered by SVG and GSAP" />
+		<meta name="keywords" content="svg, gsap, strokes, animation, bike, bicycle, illustration" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,700,800" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="demo-1">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+			<symbol id="icon-github" viewBox="0 0 32.6 31.8">
+				<title>github</title>
+				<path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
+			</symbol>
+			<symbol id="icon-bike" viewBox="0 0 525.153 525.153">
+				<title>bike</title>
+				<path d="M350.102,113.761c21.663,0,39.386-17.702,39.386-39.365S371.764,35.01,350.102,35.01   c-21.881,0-39.386,17.746-39.386,39.408S328.22,113.761,350.102,113.761z M415.746,271.329   c-60.393,0-109.407,49.014-109.407,109.407s49.014,109.407,109.407,109.407s109.407-49.014,109.407-109.407   S476.138,271.329,415.746,271.329z M415.746,457.32c-42.231,0-76.585-34.354-76.585-76.585s34.354-76.585,76.585-76.585   s76.585,34.354,76.585,76.585S457.977,457.32,415.746,457.32z M323.844,227.566h91.902V188.18h-70.02l-42.231-71.552   c-6.564-10.941-18.402-18.162-31.947-18.162c-10.284,0-19.474,4.136-26.258,10.941l-80.961,80.939   c-7.002,6.586-11.159,15.995-11.159,26.279c0,13.763,7.221,25.382,18.599,32.187l73.303,44.397v109.407h39.386V260.826   l-49.233-36.542l50.765-50.984L323.844,227.566z M109.407,271.329C49.014,271.329,0,320.343,0,380.736   s49.014,109.407,109.407,109.407s109.407-49.014,109.407-109.407S169.799,271.329,109.407,271.329z M109.407,457.32   c-42.231,0-76.585-34.354-76.585-76.585s34.354-76.585,76.585-76.585s76.585,34.354,76.585,76.585S151.638,457.32,109.407,457.32z" />
+			</symbol>
+		</svg>
+		<main>
+			<div class="content content--fixed">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Development/DecorativeBackgrounds/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=33272" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					</div>
+					<h1 class="codrops-header__title">Animated Strokes</h1>
+					<span class="info">with SVG and GSAP</span>
+				</header>
+				<nav class="topnav">
+					<a class="topnav__item" href="#">History</a>
+					<a class="topnav__item" href="#">Route</a>
+					<a class="topnav__item" href="#">Founders</a>
+				</nav>
+				<nav class="demos">
+					<a class="demo demo--current" href="index.html"><span>Demo 1</span></a>
+					<a class="demo" href="index2.html"><span>Demo 2</span></a>
+				</nav>
+				<nav class="bike-nav">
+					<span class="bike-nav__item bike-nav__item--current"><span class="bike-nav__title">Cristian Pisani</span><svg class="icon icon--bike"><use xlink:href="#icon-bike"></use></svg></span>
+					<span class="bike-nav__item"><span class="bike-nav__title">Derrick Cox</span><svg class="icon icon--bike"><use xlink:href="#icon-bike"></use></svg></span>
+					<span class="bike-nav__item"><span class="bike-nav__title">Murilo Castro</span><svg class="icon icon--bike"><use xlink:href="#icon-bike"></use></svg></span>
+					<span class="bike-nav__item"><span class="bike-nav__title">Jens Schmidt</span><svg class="icon icon--bike"><use xlink:href="#icon-bike"></use></svg></span>
+					<span class="bike-nav__item"><span class="bike-nav__title">Guillaume Cormier</span><svg class="icon icon--bike"><use xlink:href="#icon-bike"></use></svg></span> 
+				</nav>
+			</div>
+			<div class="content">
+				<svg id="bike" class="bike-1" viewBox="0 0 590.6 541.8">
+					<g id="mainpaths">
+						<path d="m467 361.492188h-422c-24.8125 0-45-20.1875-45-45v-270.992188c0-24.8125 20.1875-45 45-45h422c24.8125 0 45 20.1875 45 45v270.992188c0 24.8125-20.1875 45-45 45zm0 0" fill="#e9edf5"/><path d="m256 .5h-211c-24.8125 0-45 20.1875-45 45v270.992188c0 24.8125 20.1875 45 45 45h211zm0 0" fill="#fff"/><path d="m304.273438 445.765625c8.285156 0 15-6.714844 15-15v-77.695313c0-8.285156-6.714844-15-15-15h-96.546876c-8.285156 0-15 6.714844-15 15v77.695313c0 8.285156 6.714844 15 15 15zm0 0" fill="#9196aa"/><path d="m256 338.070312h-48.273438c-8.285156 0-15 6.714844-15 15v77.695313c0 8.285156 6.714844 15 15 15h48.273438zm0 0" fill="#cdd2e1"/><path d="m360.714844 445.925781h-209.429688c-8.285156 0-15-6.714843-15-15 0-8.285156 6.714844-15 15-15h209.433594c8.28125 0 15 6.714844 15 15 0 8.285157-6.71875 15-15.003906 15zm0 0" fill="#bec3d2"/><path d="m0 276.21875v40.273438c0 24.8125 20.1875 45 45 45h422c24.8125 0 45-20.1875 45-45v-40.273438zm0 0" fill="#bec3d2"/><path d="m256 276.21875h-256v40.273438c0 24.8125 20.1875 45 45 45h211zm0 0" fill="#e9edf5"/><path d="m262.480469 320.226562h-12.960938c-8.28125 0-15-6.71875-15-15 0-8.285156 6.71875-15 15-15h12.960938c8.28125 0 15 6.714844 15 15 0 8.28125-6.71875 15-15 15zm0 0" fill="#9196aa"/><path d="m256 290.226562h-6.480469c-8.28125 0-15 6.714844-15 15 0 8.28125 6.71875 15 15 15h6.480469zm0 0" fill="#cdd2e1"/><path d="m256 415.925781h-104.714844c-8.285156 0-15 6.714844-15 15 0 8.285157 6.714844 15 15 15h104.714844zm0 0" fill="#e9edf5"/><path d="m512 45.5c0-24.8125-20.1875-45-45-45h-422c-24.8125 0-45 20.1875-45 45v230.71875h512zm-30 200.71875h-452v-200.71875c0-8.269531 6.730469-15 15-15h422c8.269531 0 15 6.730469 15 15zm0 0" fill="#293146"/><path d="m256 246.21875h-226v-200.71875c0-8.269531 6.730469-15 15-15h211v-30h-211c-24.8125 0-45 20.1875-45 45v230.71875h256zm0 0" fill="#587ca2"/><path d="m327.496094 122.144531c-7.449219 0-13.492188-6.042969-13.492188-13.496093v-13.058594h-7.015625c-7.453125 0-13.496093-6.039063-13.496093-13.492188s6.042968-13.492187 13.496093-13.492187h20.511719c7.449219 0 13.492188 6.039062 13.492188 13.492187v26.550782c0 7.453124-6.042969 13.496093-13.496094 13.496093zm0 0" fill="#9196aa"/><g fill="#3b4975"><path d="m233.035156 108.234375h-143.535156c-8.285156 0-15-6.714844-15-15s6.714844-15 15-15h143.535156c8.285156 0 15 6.714844 15 15s-6.714844 15-15 15zm0 0"/><path d="m233.035156 156.085938h-143.535156c-8.285156 0-15-6.714844-15-15 0-8.28125 6.714844-15 15-15h143.535156c8.285156 0 15 6.71875 15 15 0 8.285156-6.714844 15-15 15zm0 0"/><path d="m233.035156 203.941406h-143.535156c-8.285156 0-15-6.714844-15-15s6.714844-15 15-15h143.535156c8.285156 0 15 6.714844 15 15s-6.714844 15-15 15zm0 0"/></g><path d="m348.351562 199.910156c0 7.976563-6.46875 14.445313-14.445312 14.445313s-14.441406-6.46875-14.441406-14.445313c0-7.976562 6.464844-14.441406 14.441406-14.441406s14.445312 6.464844 14.445312 14.441406zm0 0" fill="#9196aa"/><path d="m392.351562 199.910156c0 7.976563-6.46875 14.445313-14.445312 14.445313s-14.441406-6.46875-14.441406-14.445313c0-7.976562 6.464844-14.441406 14.441406-14.441406s14.445312 6.464844 14.445312 14.441406zm0 0" fill="#9196aa"/><path d="m389.832031 176.03125h-62.394531c-3.578125 0-7.015625-1.421875-9.542969-3.957031-2.53125-2.535157-3.953125-5.96875-3.949219-9.550781l.058594-53.671876c.007813-7.445312 6.046875-13.480468 13.492188-13.480468h92.84375c4.804687 0 9.25 2.554687 11.664062 6.707031 2.417969 4.15625 2.441406 9.277344.066406 13.457031l-30.507812 53.671875c-2.398438 4.21875-6.878906 6.824219-11.730469 6.824219zm0 0" fill="#ff3e50"/>
+					</g>
+				</svg>
+				<div class="title-wrap">
+					<p class="date">2018</p>
+					<h2 class="title">X Peak <br>Race</h2>
+					<h3 class="subtitle">The conquest of the Blue Ridge</h3>
+					<img class="route" src="img/route.svg" alt="Route"/>
+				</div>
+			</div>
+		</main>
+		<script src="js/demo.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/DrawSVGPlugin.min.js"></script>
+		<script src="js/demo1.js"></script>
+	</body>
+</html>
